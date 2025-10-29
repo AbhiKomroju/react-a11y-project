@@ -28,9 +28,9 @@ const App = () => {
         height={400}
       />
 
-      <h2>String Calculator</h2>
+      <h1>String Calculator</h1>
 
-      <h1 style={{ fontSize: "20px" }}>Enter numbers</h1>
+      <h2>Enter numbers</h2>
 
       <textarea
         style={{ margin: "10px 0", color: "#aaa" }}
