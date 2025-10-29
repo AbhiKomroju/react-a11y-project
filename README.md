@@ -1,45 +1,53 @@
-# Incubyte String Calculator Template
+# String Calculator - Accessible React App
 
-## Overview
+> A fully accessible string calculator built with React, TypeScript, and TDD methodology.
 
-This project contains a **String Calculator template** built using React. The primary goal is for candidates to implement the functionality and improve accessibility in the provided UI component.
+## 🚀 Quick Start
 
-## Project Structure
+```bash
+npm install        # Install dependencies
+npm run dev        # Run development server
+npm test           # Run all tests
+npm run build      # Build for production
+```
 
-- **src/**
-  - `App.tsx`: The React component with accessibility issues.
-  - `stringCalculator.ts`: Implementation of the String Calculator logic (to be developed).
-- **tests/**
-  - `stringCalculator.test.ts`: Suite of tests for the String Calculator functionality (to be developed).
+## ✨ Features
 
-## Getting Started
+### String Calculator (TDD)
 
-1. **Clone the Repository**
+- Empty strings, single/multiple numbers
+- Comma and newline delimiters
+- Custom delimiters (e.g., `//;\n1;2`)
+- Negative number validation
+- Ignores numbers > 1000
+- **8 tests, 100% passing** ✅
 
-   ```bash
-   git clone https://github.com/yourusername/string-calculator.git
-   cd string-calculator
-   ```
+### Accessibility (WCAG Compliant)
 
-2. **Install Dependencies**
+- ✅ Semantic HTML (`button`, `form`, `main`, `label`)
+- ✅ Proper heading hierarchy (h1 → h2)
+- ✅ WCAG AA color contrast (#333 on #fff)
+- ✅ Keyboard navigation (Tab, Enter)
+- ✅ Visible focus indicators
+- ✅ Screen reader support (ARIA labels, live regions)
+- ✅ Alt text for images
 
-   ```bash
-   npm install
-   ```
+## 📖 Usage
 
-3. **Run the Application**
+Enter numbers in different formats:
 
-   ```bash
-   npm start
-   ```
+- Comma: `1,2,3` → 6
+- Newline: `1\n2\n3` → 6
+- Custom: `//;\n1;2` → 3
 
-4. **Run Tests**
+**Rules:** Negatives throw errors. Numbers > 1000 ignored.
 
-   ```bash
-   npm test
-   ```
+## 🛠️ Tech Stack
 
-## Task for Candidates
+- React 19 + TypeScript
+- Vite + Vitest
+- TDD Methodology
 
-- Implement the functionality of the String Calculator following TDD best practices.
-- Resolve accessibility issues in the `App.tsx`.
+## 📄 License
+
+MIT
