@@ -73,10 +73,19 @@ const App = () => {
           Calculate
         </button>
       </form>
-
-      {result !== null && <p style={{ color: "green" }}>Result: {result}</p>}
+      <div aria-live="polite" aria-atomic="true">
+        {result !== null && (
+          <p style={{ color: "green", fontWeight: "bold", marginTop: "15px" }}>
+            Result: {result}
+          </p>
+        )}
+      </div>
       {error && (
-        <p role="alert" style={{ color: "red" }}>
+        <p
+          role="alert"
+          aria-live="assertive"
+          style={{ color: "red", fontWeight: "bold", marginTop: "15px" }}
+        >
           Error: {error}
         </p>
       )}
