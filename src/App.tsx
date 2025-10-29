@@ -40,8 +40,17 @@ const App = () => {
         <label htmlFor="number-input">
           <h2>Enter numbers</h2>
         </label>
+        <p
+          id="calculator-instructions"
+          style={{ color: "#555", marginBottom: "10px", fontSize: "14px" }}
+        >
+          Enter numbers separated by commas or new lines. Supports custom
+          delimiters (e.g., //;\n1;2). Numbers greater than 1000 will be
+          ignored.
+        </p>
         <textarea
           id="number-input"
+          aria-describedby="calculator-instructions"
           style={{
             margin: "10px 0",
             color: "#333",
