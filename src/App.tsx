@@ -30,9 +30,11 @@ const App = () => {
 
       <h1>String Calculator</h1>
 
-      <h2>Enter numbers</h2>
-
+      <label htmlFor="number-input">
+        <h2>Enter numbers</h2>
+      </label>
       <textarea
+        id="number-input"
         style={{ margin: "10px 0", color: "#333" }}
         placeholder="Enter numbers"
         value={input}
