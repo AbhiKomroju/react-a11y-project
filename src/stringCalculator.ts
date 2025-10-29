@@ -16,6 +16,11 @@ export function add(numbers: string): number {
   }
 
   const nums = numberString.split(/[\n,]/);
-  const sum = nums.reduce((acc, curr) => acc + parseInt(curr), 0);
+  const parsedNums = nums.map((num) => parseInt(num));
+  const negativeNums = parsedNums.filter((num) => num < 0);
+  if (negativeNums.length > 0) {
+    throw new Error(`Negative numbers not allowed: ${negativeNums.join(",")}`);
+  }
+  const sum = parsedNums.reduce((acc, curr) => acc + curr, 0);
   return sum;
 }
