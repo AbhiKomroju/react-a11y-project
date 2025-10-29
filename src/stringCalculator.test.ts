@@ -20,4 +20,9 @@ describe("String Calculator", () => {
     expect(add("1,2,3")).toBe(6);
     expect(add("5,6,7")).toBe(18);
   });
+
+  it("Adding numbers separated by new lines should return the sum of the numbers", () => {
+    expect(add("1\n2,3")).toBe(6);
+    expect(add("5\n6\n7")).toBe(18);
+  });
 });
