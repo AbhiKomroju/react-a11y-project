@@ -36,7 +36,7 @@ const App = () => {
       <textarea
         id="number-input"
         style={{ margin: "10px 0", color: "#333" }}
-        placeholder="Enter numbers"
+        placeholder="Enter numbers (comma or newline separated) "
         value={input}
         onChange={(e) => setInput(e.target.value)}
       />
@@ -56,11 +56,11 @@ const App = () => {
       </button>
 
       {result !== null && <p style={{ color: "green" }}>Result: {result}</p>}
-      {error && <p style={{ color: "red" }}>Error: {error}</p>}
-
-      <div role="alert">
-        <p>Make sure you enter numbers correctly!</p>
-      </div>
+      {error && (
+        <p role="alert" style={{ color: "red" }}>
+          Error: {error}
+        </p>
+      )}
     </div>
   );
 };
