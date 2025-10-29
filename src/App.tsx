@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { add } from "./stringCalculator";
+import "./App.css";
 
 const App = () => {
   const [input, setInput] = useState("");
@@ -30,30 +31,48 @@ const App = () => {
 
       <h1>String Calculator</h1>
 
-      <label htmlFor="number-input">
-        <h2>Enter numbers</h2>
-      </label>
-      <textarea
-        id="number-input"
-        style={{ margin: "10px 0", color: "#333" }}
-        placeholder="Enter numbers (comma or newline separated) "
-        value={input}
-        onChange={(e) => setInput(e.target.value)}
-      />
-
-      <button
-        type="button"
-        onClick={handleCalculate}
-        style={{
-          padding: "10px",
-          backgroundColor: "#008cba",
-          color: "#fff",
-          border: "none",
-          cursor: "pointer",
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          handleCalculate();
         }}
       >
-        Calculate
-      </button>
+        <label htmlFor="number-input">
+          <h2>Enter numbers</h2>
+        </label>
+        <textarea
+          id="number-input"
+          style={{
+            margin: "10px 0",
+            color: "#333",
+            padding: "8px",
+            border: "2px solid #ccc",
+            borderRadius: "4px",
+            width: "100%",
+            minHeight: "80px",
+            fontSize: "16px",
+          }}
+          placeholder="Enter numbers (comma or newline separated) "
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+        />
+
+        <button
+          type="submit"
+          style={{
+            padding: "10px 20px",
+            backgroundColor: "#008cba",
+            color: "#fff",
+            border: "2px solid #008cba",
+            borderRadius: "4px",
+            cursor: "pointer",
+            fontSize: "16px",
+            fontWeight: "bold",
+          }}
+        >
+          Calculate
+        </button>
+      </form>
 
       {result !== null && <p style={{ color: "green" }}>Result: {result}</p>}
       {error && (
