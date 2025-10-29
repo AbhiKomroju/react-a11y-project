@@ -21,6 +21,7 @@ export function add(numbers: string): number {
   if (negativeNums.length > 0) {
     throw new Error(`Negative numbers not allowed: ${negativeNums.join(",")}`);
   }
-  const sum = parsedNums.reduce((acc, curr) => acc + curr, 0);
+  const validNums = parsedNums.filter((num) => num <= 1000);
+  const sum = validNums.reduce((acc, curr) => acc + curr, 0);
   return sum;
 }
